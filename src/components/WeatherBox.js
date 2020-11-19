@@ -1,16 +1,26 @@
 import React from "react"
 import Card from 'react-bootstrap/Card'
 
+function temps(kelvin){
+    const celsius = (kelvin - 273.15).toFixed(1);
+    const fahrenheit = (( kelvin * 1.8 ) - 459.67).toFixed(1);
+    return {C: celsius, F:fahrenheit}
+}
+
 function WeatherBox(props){
     return (
-    <Card style={{ width: '18rem' }} className="text-center">
-        <Card.Img variant="top" src="https://www.noaa.gov/sites/default/files/styles/crop_394x394/public/thumbnails/image/FocusArea__Weather-02.jpg" />
+    <Card style={{ width: '12rem' }} className="text-center">
+        <Card.Img variant="bottom" src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`} />
         <Card.Body>
     <Card.Title>{props.data.name}</Card.Title>
         <Card.Text>
-            Temperature: {props.data.main.temp}
-            Wind: {props.data.wind.speed}
-            Weather: {props.data.weather.description}
+            Temperature: {temps(props.data.main.temp).C}°C, {temps(props.data.main.temp).F}°F 
+        </Card.Text>
+        <Card.Text>
+        Humidity: {props.data.main.humidity}% 
+        </Card.Text>
+        <Card.Text>
+        Weather: {props.data.weather[0].description}
         </Card.Text>
         </Card.Body>
     </Card>);   
