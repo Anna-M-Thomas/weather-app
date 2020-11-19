@@ -17,7 +17,7 @@ class App extends React.Component {
 
   componentDidMount(){
     const IDs = this.state.cities.map(obj=>obj.id).join(",");
-    fetch(`https://api.openweathermap.org/data/2.5/group?id=${IDs}&appid=e3778c28cf2ce53b02d2d30b9347f9af`)
+    fetch(`https://api.openweathermap.org/data/2.5/group?id=${IDs}&appid=`)
             .then(response => response.json())
             .then(response => {
                 const data = response.list;
