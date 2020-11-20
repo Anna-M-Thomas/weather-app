@@ -10,9 +10,7 @@ class App extends React.Component {
                     {name: "Salem", id: 5750162}, 
                     {name: "Iwanuma", id:2112527}, 
                     {name: "Hakodate", id:2130188} ],
-                  icons: {
 
-                  },
                   weather: [] 
                 }
   }

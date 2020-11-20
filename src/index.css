@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+.navbar {
+  background-color: #e3f2fd;
+}
 
 body {
   margin: 0;

@@ -10,9 +10,9 @@ function temps(kelvin){
 function WeatherBox(props){
     return (
     <Card style={{ width: '12rem' }} className="text-center">
+        <Card.Header>{props.data.name}</Card.Header>
         <Card.Img variant="bottom" src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`} />
         <Card.Body>
-    <Card.Title>{props.data.name}</Card.Title>
         <Card.Text>
             Temperature: {temps(props.data.main.temp).C}°C, {temps(props.data.main.temp).F}°F 
         </Card.Text>
